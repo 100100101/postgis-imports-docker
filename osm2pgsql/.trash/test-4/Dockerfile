@@ -1,0 +1,1 @@
+FROM osmtools/osm2pgsql:1.5.1

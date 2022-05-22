@@ -1,0 +1,14 @@
+{
+  "name": "docker",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "up": "docker-compose up",
+    "scratch": "docker network rm shp2pgsql_net ; docker-compose rm -f -s ; docker image rm -f shp2pgsql_app ; docker image rm -f shp2pgsql_db ; docker-compose up",
+    "rm-images": "docker image rm -f shp2pgsql_app ; docker image rm -f shp2pgsql_db",
+    "rm-compose": "docker-compose rm -f -s",
+    "rm-images-compose": "yarn rm-images ; yarn rm-compose",
+    "rm-up": "yarn rm-images ; yarn up",
+    "new-up": "yarn rm-images-compose ; yarn up"
+  }
+}

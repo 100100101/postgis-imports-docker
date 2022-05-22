@@ -1,0 +1,34 @@
+version: "3.9"
+networks:
+  postgis-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: $NETWORK_SUBNET
+services:
+  postgis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: from_postgis_postgis
+    networks:
+      - postgis-net
+    volumes:
+      - $HOST_PGDATA:$PGDATA
+    environment:
+      # - ENV CONTAINER_PG_INSTANCE_DIR_PATH=$CONTAINER_PG_INSTANCE_DIR_PATH
+      # - INNER_POSTGRES_PORT=$INNER_POSTGRES_PORT
+      # - ENV OUTER_POSTGRES_PORT=$OUTER_POSTGRES_PORT
+      - POSTGRES_DB=$POSTGRES_DB
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      # - ENV POSTGRES_INITDB_ARGS=$POSTGRES_INITDB_ARGS
+      # - ENV POSTGRES_INITDB_WALDIR=$POSTGRES_INITDB_WALDIR
+      # - ENV POSTGRES_HOST_AUTH_METHOD=$POSTGRES_HOST_AUTH_METHOD
+      - PGDATA=$PGDATA
+      - HOST_PGDATA=$HOST_PGDATA
+    ports:
+      - $INNER_POSTGRES_PORT:$INNER_POSTGRES_PORT
+    expose:
+      - $INNER_POSTGRES_PORT

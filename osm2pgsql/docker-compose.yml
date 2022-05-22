@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  ubuntu_osm2pgsql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cont_ubuntu_osm2pgsql
