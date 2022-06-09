@@ -18,6 +18,25 @@
 
 # docker exec from_postgis_postgis which shp2pgsql
 # docker exec from_postgis_postgis shp2pgsql -h
+# shp2pgsql -s SRID SHAPEFILE.shp SCHEMA.TABLE | psql -h HOST -d DATABASE -U USER
+
+
+
+# TABLE_NAME=boundary-polygon-lvl10
+TABLE_NAME=railway-station-point
+SRID=3857
+PATH_TO_SHAPE=/home/shapes/$TABLE_NAME
+DB=gis
+USER_NAME=gisuser
+DB_PASSWORD=pass
+DB_PORT=5432
+# docker exec from_postgis_postgis shp2pgsql -s $SRID SHAPEFILE.shp SCHEMA.TABLE | psql -h HOST -d DATABASE -U USER
+
+# /usr/lib/postgresql/14/bin/shp2pgsql -s 4326 ${pathToShape} ${tableName} | PGPASSWORD=${password} psql -d ${db} -U ${name} -h localhost -p ${port}
+
+docker exec from_postgis_postgis shp2pgsql -s $SRID $PATH_TO_SHAPE $TABLE_NAME | PGPASSWORD=$DB_PASSWORD psql -d $DB -U $USER_NAME -h localhost -p $DB_PORT
+
+
 
 
 # shp2pgsql: illegal option -- v
