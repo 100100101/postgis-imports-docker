@@ -7,7 +7,7 @@ services:
     container_name: from_postgis_postgis
     volumes:
       - $HOST_PGDATA:$PGDATA
-      - $SHAPE_DIR_HOST:$SHAPE_DIR_CONT
+      - $SHAPES_DIR_HOST:$SHAPES_DIR_CONT
     environment:
       # - ENV CONTAINER_PG_INSTANCE_DIR_PATH=$CONTAINER_PG_INSTANCE_DIR_PATH
       # - INNER_POSTGRES_PORT=$INNER_POSTGRES_PORT
