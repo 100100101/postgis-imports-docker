@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  gdal_image:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gdal_container_name
