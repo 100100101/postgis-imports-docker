@@ -1,19 +1,10 @@
 version: "3.9"
-networks:
-  postgis-net:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: $NETWORK_SUBNET
 services:
   postgis:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: from_postgis_postgis
-    networks:
-      - postgis-net
     volumes:
       - $HOST_PGDATA:$PGDATA
     environment:
