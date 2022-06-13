@@ -5,5 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: $OSM2PGSQL_CONTAINER_NAME
-    expose:
-      - 5432
+    # volumes:
+    #   - $HOST_OSM_FILES_DIR:$CONT_OSM_FILES_DIR
+    # expose:
+    #   - $INNER_POSTGRES_PORT
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    #   - "host.docker.internal:172.17.0.1"
+    # network_mode: host

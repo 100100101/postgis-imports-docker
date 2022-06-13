@@ -15,7 +15,7 @@ echo "Projection SRID: $PROJECTION_SRID"
 #
 # osm2pgsql --create --slim --cache 2000 --database=$PG_CONNECTION_URL $OSM_PBF_FILE_PATH
 
-osm2pgsql --create --cache $CACHE_MB --proj=$PROJECTION_SRID --database=$PG_CONNECTION_URL $OSM_PBF_FILE_PATH
+osm2pgsql --create --cache $CACHE_MB --proj=$PROJECTION_SRID --database=$PG_CONNECTION_URL $HOST_OSM_FILES_DIR
 
 # Как я уже сказал, 6 часов — это моя догадка; из-за высоких требований к памяти я в последнее время не запускал osm2pgsql на файле планеты без --slim. Я думаю, если у вас 512 ГБ ОЗУ и 4-8 ядер, у вас должно быть все в порядке. Точные аргументы командной строки зависят от того, какой стиль карты вы будете использовать и т. д., но, скорее всего, это будет что-то вроде:
 
