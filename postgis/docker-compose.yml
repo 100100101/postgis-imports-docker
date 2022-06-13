@@ -1,6 +1,8 @@
 version: "3.9"
 services:
   postgis:
+    # env_file:
+    #   - ../.env
     image: postgis/postgis:14-master
     # build:
     #   context: .
@@ -8,7 +10,7 @@ services:
     # command: [ "postgres", "-c", "work_mem=50MB"]
     # command: postgres -c work_mem=40MB
     command: postgres -c config_file=$CONT_PATH_TO_PG_CONF
-    container_name: $CONTAINER_NAME
+    container_name: $POSTGIS_CONTAINER_NAME
     volumes:
       - $HOST_PATH_TO_PG_CONF:$CONT_PATH_TO_PG_CONF
       - $HOST_PGDATA:$PGDATA

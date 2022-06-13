@@ -1,6 +1,5 @@
 # !/bin/bash
-source ./.env
-source ./postgis/.env
+source ../.env
 
 # postgresql://[user[:password]@][netloc][:port][,...][/dbname][?param1=value1&...]
 PG_CONNECTION_URL=postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$INNER_POSTGRES_PORT/$POSTGRES_DB
