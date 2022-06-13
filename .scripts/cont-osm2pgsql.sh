@@ -8,7 +8,6 @@ echo "Cache size mb: $CACHE_MB"
 echo "Projection SRID: $PROJECTION_SRID"
 # -d \
 # --add-host host.docker.internal:host-gateway \
-# --network=host \
 docker run \
     --volume $HOST_OSM_FILES_DIR:$CONT_OSM_FILES_DIR \
     --network host \
