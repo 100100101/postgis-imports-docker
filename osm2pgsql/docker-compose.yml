@@ -4,4 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: cont_ubuntu_osm2pgsql
+    container_name: $OSM2PGSQL_CONTAINER_NAME
+    expose:
+      - 5432
