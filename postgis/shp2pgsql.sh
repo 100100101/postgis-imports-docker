@@ -1,7 +1,9 @@
 # !/bin/bash
-source .env
+source ../.env
 
-# docker-compose up
+PATH_TO_SHAPE=$CONT_SHAPES_PATH/$TABLE_NAME_SHP_FILENAME
+
+docker exec $POSTGIS_CONTAINER_NAME shp2pgsql -s $PROJECTION_SRID $PATH_TO_SHAPE $TABLE_NAME_SHP_FILENAME | PGPASSWORD=$POSTGRES_PASSWORD psql -d $POSTGRES_DB -U $POSTGRES_USER -h $POSTGRES_HOST -p $INNER_POSTGRES_PORT
 
 ###################
 # --detach,-d		Отсоединенный режим: запуск команды в фоновом режиме
@@ -21,13 +23,6 @@ source .env
 
 # docker exec from_postgis_postgis which shp2pgsql
 # docker exec from_postgis_postgis shp2pgsql -h
-
-# TABLE_NAME=boundary-polygon-lvl10
-TABLE_NAME=railway-station-point
-SRID=3857
-PATH_TO_SHAPE=/home/shapes/$TABLE_NAME
-
-docker exec from_postgis_postgis shp2pgsql -s $SRID $PATH_TO_SHAPE $TABLE_NAME | PGPASSWORD=$POSTGRES_PASSWORD psql -d $POSTGRES_DB -U $POSTGRES_USER -h localhost -p $INNER_POSTGRES_PORT
 
 # shp2pgsql: illegal option -- v
 # RELEASE: 3.1.3 (008d2db)
