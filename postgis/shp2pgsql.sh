@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 source ../.env
 
 PATH_TO_SHAPE=$CONT_SHAPES_PATH/$TABLE_NAME_SHP_FILENAME
