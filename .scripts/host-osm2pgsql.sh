@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 source ../.env
 
 # postgresql://[user[:password]@][netloc][:port][,...][/dbname][?param1=value1&...]

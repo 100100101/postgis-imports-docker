@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 source ../.env
 RUN_NAME=run_ubuntu_osm2pgsql
 PG_CONNECTION_URL=postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$INNER_POSTGRES_PORT/$POSTGRES_DB

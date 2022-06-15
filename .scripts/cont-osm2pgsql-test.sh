@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 source ../.env
 RUN_NAME=run_ubuntu_osm2pgsql
 

@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 DOTENV_PATH=../.env
 source $DOTENV_PATH
 # -f "./docker-compose.yml"
