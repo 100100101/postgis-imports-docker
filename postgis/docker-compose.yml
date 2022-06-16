@@ -1,13 +1,20 @@
 version: "3.9"
 services:
   postgis:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: from_postgis_postgis
+    # env_file:
+    #   - ../.env
+    image: postgis/postgis:14-master
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # command: [ "postgres", "-c", "work_mem=50MB"]
+    # command: postgres -c work_mem=40MB
+    command: postgres -c config_file=$CONT_PATH_TO_PG_CONF
+    container_name: $POSTGIS_CONTAINER_NAME
     volumes:
+      - $HOST_PATH_TO_PG_CONF:$CONT_PATH_TO_PG_CONF
       - $HOST_PGDATA:$PGDATA
-      - $SHAPE_DIR_HOST:$SHAPE_DIR_CONT
+      - $HOST_SHAPES_PATH:$CONT_SHAPES_PATH
     environment:
       # - ENV CONTAINER_PG_INSTANCE_DIR_PATH=$CONTAINER_PG_INSTANCE_DIR_PATH
       # - INNER_POSTGRES_PORT=$INNER_POSTGRES_PORT

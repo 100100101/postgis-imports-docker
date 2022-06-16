@@ -1,4 +1,9 @@
-# docker-compose up
+#!/bin/bash
+source ../.env
+
+PATH_TO_SHAPE=$CONT_SHAPES_PATH/$TABLE_NAME_SHP_FILENAME
+
+docker exec $POSTGIS_CONTAINER_NAME shp2pgsql -s $PROJECTION_SRID $PATH_TO_SHAPE $TABLE_NAME_SHP_FILENAME | PGPASSWORD=$POSTGRES_PASSWORD psql -d $POSTGRES_DB -U $POSTGRES_USER -h $POSTGRES_HOST -p $INNER_POSTGRES_PORT
 
 ###################
 # --detach,-d		Отсоединенный режим: запуск команды в фоновом режиме
@@ -12,32 +17,12 @@
 # --workdir,-w		Рабочий каталог внутри контейнера
 ###################
 
-# docker exec 
+# docker exec
 # docker run --rm -it postgis_postgis -c 'ls -la'
 # docker exec from_postgis_postgis ls -la
 
 # docker exec from_postgis_postgis which shp2pgsql
 # docker exec from_postgis_postgis shp2pgsql -h
-# shp2pgsql -s SRID SHAPEFILE.shp SCHEMA.TABLE | psql -h HOST -d DATABASE -U USER
-
-
-
-# TABLE_NAME=boundary-polygon-lvl10
-TABLE_NAME=railway-station-point
-SRID=3857
-PATH_TO_SHAPE=/home/shapes/$TABLE_NAME
-DB=gis
-USER_NAME=gisuser
-DB_PASSWORD=pass
-DB_PORT=5432
-# docker exec from_postgis_postgis shp2pgsql -s $SRID SHAPEFILE.shp SCHEMA.TABLE | psql -h HOST -d DATABASE -U USER
-
-# /usr/lib/postgresql/14/bin/shp2pgsql -s 4326 ${pathToShape} ${tableName} | PGPASSWORD=${password} psql -d ${db} -U ${name} -h localhost -p ${port}
-
-docker exec from_postgis_postgis shp2pgsql -s $SRID $PATH_TO_SHAPE $TABLE_NAME | PGPASSWORD=$DB_PASSWORD psql -d $DB -U $USER_NAME -h localhost -p $DB_PORT
-
-
-
 
 # shp2pgsql: illegal option -- v
 # RELEASE: 3.1.3 (008d2db)
