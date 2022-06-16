@@ -1,0 +1,13 @@
+{
+    "watch": ["./**"],
+    "ignore": [
+        "src/**/*.spec.ts",
+        "node_modules/*",
+        "public/*",
+        "build/*",
+        "*.png",
+        "*.jpg"
+    ],
+    "ext": "js, ts, json",
+    "exec": "yarn ts-node"
+}

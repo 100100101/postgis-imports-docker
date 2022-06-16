@@ -1,0 +1,62 @@
+{
+  "name": "shp2pgsql",
+  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "start:dev": "cross-env IS_DEVELOPMENT=true NODE_ENV=development yarn ts-node ./index.ts",
+    "start:prod": "yarn ts-node ./index.ts",
+    "ts-node": "ts-node -r tsconfig-paths/register"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "./**"
+    ],
+    "ignore": [
+      "src/**/*.spec.ts",
+      "node_modules/*",
+      "public/*",
+      "build/*",
+      "*.png",
+      "*.jpg"
+    ],
+    "ext": "js, ts, json",
+    "exec": "yarn ts-node"
+  },
+  "devDependencies": {
+    "useHotModuleReplacement": "link:utils/useHotModuleReplacement",
+    "@types/node": "^17.0.23",
+    "@types/webpack-env": "^1.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "2.6.2",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "jsdom": "^19.0.0",
+    "koa": "^2.13.4",
+    "pg": "^8.7.3",
+    "puppeteer": "^13.5.2",
+    "ssh2-sftp-client": "^7.2.2",
+    "vue": "^3.2.31"
+  },
+  "author": {
+    "name": "Bibik"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

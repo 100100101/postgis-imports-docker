@@ -1,0 +1,7 @@
+{
+  "name": "postgres",
+  "password": "mysecretpassword",
+  "host": "192.168.245.238",
+  "port": "5432",
+  "db": "test-gis"
+}

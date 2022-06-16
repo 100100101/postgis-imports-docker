@@ -1,0 +1,31 @@
+{
+  "name": "acs-shp14",
+  "version": "0.1.1",
+  "description": "upload 2014 census tiger and cartographic shapefiles to a postgresql postgis database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/royhobbstn/acs-shp.git"
+  },
+  "keywords": [
+    "postgis",
+    "census",
+    "shapefile"
+  ],
+  "author": "daniel trone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/royhobbstn/acs-shp/issues"
+  },
+  "homepage": "https://github.com/royhobbstn/acs-shp#readme",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "pg": "^4.4.3",
+    "request": "^2.67.0",
+    "rmdir": "^1.1.0",
+    "unzip": "^0.1.11"
+  }
+}
