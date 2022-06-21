@@ -31,3 +31,4 @@ services:
       - $INNER_POSTGRES_PORT:$INNER_POSTGRES_PORT
     expose:
       - $INNER_POSTGRES_PORT
+    restart: always
