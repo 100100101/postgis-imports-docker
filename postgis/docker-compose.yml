@@ -3,9 +3,8 @@ services:
   postgis:
     # env_file:
     #   - ../.env
-    build:
-      image: postgis/postgis:14-master
-      shm_size: '2gb'
+    image: postgis/postgis:14-master
+    shm_size: '2gb'
     # build:
     #   context: .
     #   dockerfile: Dockerfile
