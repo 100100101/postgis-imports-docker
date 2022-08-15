@@ -1,5 +1,7 @@
 #!/bin/bash
+source ../.env
 
+echo $
 # SHP_IMPORT_TABLE_NAME=building_point_3857 && \ 
 # SHP_IMPORT_FILENAME=building-point && \
 # ./shp2pgsql.sh
