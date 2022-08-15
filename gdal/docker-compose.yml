@@ -8,3 +8,4 @@ services:
     # expose:
     #   - $INNER_POSTGRES_PORT
     # network_mode: host
+    command: /bin/bash -c "echo 'echo-test' && sleep 200"
