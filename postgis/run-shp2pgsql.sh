@@ -75,9 +75,9 @@ export SHP_IMPORT_FILENAME=boundary-polygon-land-lvl3 ; \
 ./shp2pgsql.sh
 
 
-# export SHP_IMPORT_TABLE_NAME=parking_polygon_3857 ; \ 
-# export SHP_IMPORT_FILENAME=parking-polygon ; \
-# ./shp2pgsql.sh
+export SHP_IMPORT_TABLE_NAME=parking_polygon_3857 ; \ 
+export SHP_IMPORT_FILENAME=parking-polygon ; \
+./shp2pgsql.sh
 
 
 export SHP_IMPORT_TABLE_NAME=boundary_polygon_land_lvl4_3857 ; \ 
