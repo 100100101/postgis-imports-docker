@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# export SHP_FILENAME=building-point ; ./convert-4326to3857.sh && \
+export SHP_FILENAME=building-point ; ./convert-4326to3857.sh && \
 export SHP_FILENAME=aerialway-line ; ./convert-4326to3857.sh && \
 export SHP_FILENAME=building-polygon ; ./convert-4326to3857.sh && \
 export SHP_FILENAME=aerialway-point ; ./convert-4326to3857.sh && \
