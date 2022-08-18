@@ -8,14 +8,21 @@ echo "Cache size mb: $CACHE_MB"
 echo "Projection SRID: $PROJECTION_SRID"
 # -d \
 # --add-host host.docker.internal:host-gateway \
+# --disable-parallel-indexing
 docker run \
     --volume $HOST_OSM_FILES_DIR:$CONT_OSM_FILES_DIR \
+    --volume $HOST_FLAT_NODES_DIR:$CONT_FLAT_NODES_DIR \
     --network host \
     --name $RUN_NAME \
     --rm -it ${OSM2PGSQL_COMPOSE_PROJECT_NAME}_ubuntu_osm2pgsql \
     osm2pgsql \
+    --hstore \
     --create \
+    --slim --drop \
     --cache $CACHE_MB \
     --proj $PROJECTION_SRID \
+    --flat-nodes $CONT_FLAT_NODES_FILE_PATH \
+    --multi-geometry \
     --database $PG_CONNECTION_URL \
     ${CONT_OSM_FILES_DIR}/${OSM_PBF_FILE_NAME}
+    --slim --drop \

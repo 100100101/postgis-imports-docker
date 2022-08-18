@@ -50,5 +50,5 @@ export SHP_IMPORT_TABLE_NAME=water_line_3857 ; export SHP_IMPORT_FILENAME=water-
 export SHP_IMPORT_TABLE_NAME=boundary_polygon_lvl9_3857 ; export SHP_IMPORT_FILENAME=boundary-polygon-lvl9_3857 ; ./shp2pgsql.sh && \
 export SHP_IMPORT_TABLE_NAME=water_polygon_3857 ; export SHP_IMPORT_FILENAME=water-polygon_3857 ; ./shp2pgsql.sh && \
 export SHP_IMPORT_TABLE_NAME=boundary_polygon_3857 ; export SHP_IMPORT_FILENAME=boundary-polygon_3857 ; ./shp2pgsql.sh && \
-export SHP_IMPORT_TABLE_NAME=water_3857 ; export SHP_IMPORT_FILENAME=water_3857 ; ./shp2pgsql.sh && \
+export SHP_IMPORT_TABLE_NAME=water_3857 ; export SHP_IMPORT_FILENAME=water_3857 ; ./shp2pgsql.sh
 
